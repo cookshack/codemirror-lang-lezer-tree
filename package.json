@@ -1,0 +1,36 @@
+{
+  "name": "codemirror-lang-lezer-tree",
+  "version": "0.1.0",
+  "description": "Language support for Lezer trees",
+  "homepage": "https://git.sr.ht/~mattmundell/codemirror-lang-lezer-tree",
+  "scripts": {
+    "all": "npm run prepare && npm test",
+    "test": "mocha test/test.js",
+    "prepare": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.sr.ht/~mattmundell/codemirror-lang-lezer-tree"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@codemirror/language": "^6.0.0",
+    "@lezer/highlight": "^1.0.0",
+    "@lezer/lr": "^1.0.0"
+  },
+  "devDependencies": {
+    "@lezer/generator": "^1.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "lezer-utils": "^0.1.0",
+    "mocha": "^9.0.1",
+    "rollup": "^2.60.2"
+  },
+  "license": "MIT"
+}

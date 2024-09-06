@@ -1,0 +1,29 @@
+@precedence {
+}
+
+//// Templates.
+
+list<x> { (x ",")* x? }
+
+//// Root.
+
+@top Tree { Node }
+
+Node { Name Children? }
+
+Name { name }
+
+Children { "(" list<Node> ")" }
+
+//// Tokens.
+
+@skip { whitespace }
+
+@tokens {
+  whitespace { ($[ \t\r\n] | "\r"? "\n")+ }
+  name { (@asciiLetter | @digit | $[\-_\u{a1}-\u{10ffff}])+ }
+}
+
+//// Highlight.
+
+@external propSource highlighting from "./highlight"

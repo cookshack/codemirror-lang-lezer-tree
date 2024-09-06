@@ -1,0 +1,27 @@
+# Lone
+
+X
+
+==>
+Tree(Node(Name))
+
+# Child
+
+X(Y)
+
+==>
+Tree(Node(Name, Children(Node(Name))))
+
+# Children
+
+X(Y1, Y2)
+
+==>
+Tree(Node(Name, Children(Node(Name), Node(Name))))
+
+# Grandchildren
+
+X(Y1, Y2(Z1, Z2), Y3(Z3))
+
+==>
+Tree(Node(Name, Children(Node(Name), Node(Name, Children(Node(Name), Node(Name))), Node(Name, Children(Node(Name))))))
