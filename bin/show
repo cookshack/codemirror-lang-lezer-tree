@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import { mainShow } from 'lezer-utils'
+import { lr } from '../dist/index.js'
+mainShow(lr)
