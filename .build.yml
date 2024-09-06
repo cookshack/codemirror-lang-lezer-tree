@@ -1,0 +1,16 @@
+image: alpine/edge
+secrets:
+  - e2e843cf-6f7e-4b74-989f-819a97ca70b8
+sources:
+  - git+ssh://git@git.sr.ht/~mattmundell/codemirror-lang-lezer-tree
+tasks:
+  - check: |
+      cd codemirror-lang-lezer-tree
+      if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD)" ]; then \
+        complete-build; \
+      fi
+  - mirror: |
+      cd codemirror-lang-lezer-tree
+      git remote add github git@github.com:cookshack/codemirror-lang-lezer-tree.git
+      ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      git push github main
