@@ -7,9 +7,13 @@ list<x> { (x ",")* x? }
 
 //// Root.
 
-@top Tree { Node }
+@top Tree { TopNode }
 
-Node { Name Children? }
+TopNode { node }
+
+Node { node }
+
+node { Name Children? }
 
 Name { name }
 
