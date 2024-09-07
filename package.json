@@ -1,5 +1,5 @@
 {
-  "name": "codemirror-lang-lezer-tree",
+  "name": "@cookshack/codemirror-lang-lezer-tree",
   "version": "0.1.0",
   "description": "Language support for Lezer trees",
   "homepage": "https://git.sr.ht/~mattmundell/codemirror-lang-lezer-tree",
