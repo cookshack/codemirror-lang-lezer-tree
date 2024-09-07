@@ -29,7 +29,7 @@ error { @specialize<specialName, "⚠"> }
 
 //// Tokens.
 
-@skip { whitespace }
+@skip { whitespace | LineComment }
 
 @tokens {
   whitespace { ($[ \t\r\n] | "\r"? "\n")+ }
@@ -37,6 +37,7 @@ error { @specialize<specialName, "⚠"> }
   nameCharLower { @asciiLowercase | @digit | $[\-_\u{a1}-\u{10ffff}] }
   specialName { nameCharLower nameChar* }
   name { nameChar+ }
+  LineComment[isolate] { "//" ("\\" (![\n] | "\\r"? "\\n") | ![\n])* }
   @precedence { specialName, name }
 }
 

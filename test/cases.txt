@@ -52,3 +52,11 @@ X(Y1, ⚠)
 Tree(Top(Name,
              Ch(Node(Name),
                 Error)))
+
+# Comment
+
+//
+X
+
+==>
+Tree(LineComment, Top(Name))
