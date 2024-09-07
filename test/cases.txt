@@ -3,43 +3,43 @@
 X
 
 ==>
-Tree(TopNode(Name))
+Tree(Top(Name))
 
 # Child
 
 X(Y)
 
 ==>
-Tree(TopNode(Name,
-             Children(Node(Name))))
+Tree(Top(Name,
+             Ch(Node(Name))))
 
 # Children
 
 X(Y1, Y2)
 
 ==>
-Tree(TopNode(Name,
-             Children(Node(Name),
+Tree(Top(Name,
+             Ch(Node(Name),
                       Node(Name))))
 
-# Grandchildren
+# Grandch
 
 X(Y1, Y2(Z1, Z2), Y3(Z3))
 
 ==>
-Tree(TopNode(Name,
-             Children(Node(Name),
+Tree(Top(Name,
+             Ch(Node(Name),
                       Node(Name,
-                           Children(Node(Name),
+                           Ch(Node(Name),
                                     Node(Name))),
                       Node(Name,
-                           Children(Node(Name))))))
+                           Ch(Node(Name))))))
 
 # Special
 
 X(Y1, keyword)
 
 ==>
-Tree(TopNode(Name,
-             Children(Node(Name),
+Tree(Top(Name,
+             Ch(Node(Name),
                       Special)))

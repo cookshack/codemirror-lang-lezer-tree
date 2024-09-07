@@ -7,17 +7,17 @@ list<x> { (x ",")* x? }
 
 //// Root.
 
-@top Tree { TopNode }
+@top Tree { Top }
 
-TopNode { node | special }
+Top { node | special }
 
-node { Name Children? }
+node { Name Ch? }
 
 special { specialName }
 
 Name { name }
 
-Children { "(" list<Special | Node> ")" }
+Ch { "(" list<Special | Node> ")" }
 
 Node { node }
 
