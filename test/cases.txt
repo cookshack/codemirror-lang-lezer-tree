@@ -34,3 +34,12 @@ Tree(TopNode(Name,
                                     Node(Name))),
                       Node(Name,
                            Children(Node(Name))))))
+
+# Special
+
+X(Y1, keyword)
+
+==>
+Tree(TopNode(Name,
+             Children(Node(Name),
+                      Special)))
