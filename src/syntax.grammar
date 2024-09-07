@@ -9,7 +9,7 @@ list<x> { (x ",")* x? }
 
 @top Tree { Top }
 
-Top { node | special }
+Top { node | special | error }
 
 node { Name Ch? }
 
@@ -17,11 +17,15 @@ special { specialName }
 
 Name { name }
 
-Ch { "(" list<Special | Node> ")" }
+Ch { "(" list<Special | Node | Error> ")" }
 
 Node { node }
 
 Special { special }
+
+Error { error }
+
+error { @specialize<specialName, "⚠"> }
 
 //// Tokens.
 

@@ -42,4 +42,13 @@ X(Y1, keyword)
 ==>
 Tree(Top(Name,
              Ch(Node(Name),
-                      Special)))
+                Special)))
+
+# Error
+
+X(Y1, ⚠)
+
+==>
+Tree(Top(Name,
+             Ch(Node(Name),
+                Error)))
