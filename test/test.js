@@ -1,5 +1,6 @@
 import { lr, pretty } from "../dist/index.js"
 import { fileTests } from "@lezer/generator/dist/test"
+import * as LZGen from "@lezer/generator"
 
 import * as fs from "fs"
 import * as path from "path"
@@ -19,22 +20,17 @@ function test1(file) {
   })
 }
 
-function testPretty
-() {
+function testPrettyParser
+(testName, parser, ext) {
   let prettyDir
 
   function isInput
   (file) {
-    if (file.endsWith('.leztree')) {
-      if (file.endsWith('.leztree.leztree'))
-        return 0
-      return 1
-    }
-    return 0
+    return file.endsWith('.' + ext) && ((file.match(/\./g) || []).length == 1)
   }
 
   prettyDir = path.join(caseDir, "pretty")
-  describe('pretty', () => {
+  describe(testName, () => {
     for (let file of fs.readdirSync(prettyDir)) {
       let content, name
 
@@ -44,13 +40,46 @@ function testPretty
         it(name, () => {
           let tree, expected
 
-          expected = fs.readFileSync(path.join(prettyDir, name + '.leztree.leztree'), "utf8")?.trim()
-          tree = lr.parser.parse(content)
+          expected = fs.readFileSync(path.join(prettyDir, name + '.' + ext + '.leztree'), "utf8")?.trim()
+          tree = parser.parse(content)
+          //console.log(pretty(tree.topNode))
           assert.equal(pretty(tree.topNode), expected)
         })
       }
     }
   })
+}
+
+// test escaping, need to build grammar by hand to get chars that need escaping
+function testPrettyEscape
+() {
+  let parser
+
+  parser = LZGen.buildParser(`
+@top Top { (open | close | comma | backslash)* }
+open { "(" }
+close { ")" }
+comma { "," }
+backslash { "\\\\" } // a single backslash
+@skip { whitespace }
+@tokens {
+  whitespace { ($[ \t\r\n] | "\r"? "\n")+ }
+  // literal tokens
+  ")"
+  "("
+  ","
+  "\\\\"
+}
+`)
+  testPrettyParser('escape', parser, 'esc')
+}
+
+function testPretty
+() {
+  // parse .leztree files, print them with pretty, check they're ok
+  testPrettyParser('pretty', lr.parser, 'leztree')
+  // test escaping
+  testPrettyEscape()
 }
 
 function testAll() {

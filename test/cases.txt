@@ -60,3 +60,10 @@ X
 
 ==>
 Tree(LineComment, Top(Name))
+
+# Escape
+
+X(\()
+
+==>
+Tree

@@ -1,0 +1,9 @@
+Root(Decl(pub,
+          FnProto(fn,
+                  Identifier,
+                  \(,
+                  \),
+                  Identifier),
+          Block({,
+                })),
+     LineComment)

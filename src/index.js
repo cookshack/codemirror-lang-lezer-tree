@@ -25,6 +25,15 @@ function language
   return new LanguageSupport(lr)
 }
 
+function escape
+(name) {
+  return name
+    .replace('\\', '\\\\')
+    .replace('(', '\\(')
+    .replace(')', '\\)')
+    .replace(',', '\\,')
+}
+
 export
 function pretty
 (node, offset = 0, indent = 0) {
@@ -49,7 +58,7 @@ function pretty
       child = child.nextSibling
     }
 
-    return prefix + node.name + (ret.length ? '(' + ret + ')' : '')
+    return prefix + escape(node.name) + (ret.length ? '(' + ret + ')' : '')
   }
   return ''
 }
