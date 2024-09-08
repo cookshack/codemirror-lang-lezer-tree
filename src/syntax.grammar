@@ -37,13 +37,15 @@ error { @specialize<specialName, "⚠"> }
   // from lezer grammar token "name"
   // why \u{a1}? (inverted !, number 161, top of ascii is DEL \u{7f} 127)
   // \u{10ffff} is last unicode char
-  nameChar { @asciiLetter | @digit | $[\-_\u{a1}-\u{10ffff}] }
-  nameCharLower { @asciiLowercase | @digit | $[\-_\u{a1}-\u{10ffff}] }
+  //nameChar { @asciiLetter | @digit | $[\-_\u{a1}-\u{10ffff}] }
+  //nameCharLower { @asciiLowercase | @digit | $[\-_\u{a1}-\u{10ffff}] }
+  nameChar { ![#()\\,] | "\\" $[#()\\,] }
+  nameCharLower { ![A-Z#()\\,] | "\\" $[#()\\,] }
 
   specialName { nameCharLower nameChar* }
   name { nameChar+ }
   LineComment[isolate] { "#" ![\n\r]* }
-  @precedence { specialName, name }
+  @precedence { whitespace, specialName, name }
 }
 
 //// Highlight.

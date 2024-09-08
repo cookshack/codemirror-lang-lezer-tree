@@ -66,4 +66,4 @@ Tree(LineComment, Top(Name))
 X(\()
 
 ==>
-Tree
+Tree(Top(Name,Ch(Special)))
