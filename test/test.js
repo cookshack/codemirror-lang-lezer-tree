@@ -56,11 +56,12 @@ function testPrettyEscape
   let parser
 
   parser = LZGen.buildParser(`
-@top Top { (open | close | comma | backslash)* }
+@top Top { (open | close | comma | backslash | x)* }
 open { "(" }
 close { ")" }
 comma { "," }
 backslash { "\\\\" } // a single backslash
+x { "x\\\\x" }
 @skip { whitespace }
 @tokens {
   whitespace { ($[ \t\r\n] | "\r"? "\n")+ }
@@ -69,6 +70,7 @@ backslash { "\\\\" } // a single backslash
   "("
   ","
   "\\\\"
+  "x\\\\x"
 }
 `)
   testPrettyParser('escape', parser, 'esc')
