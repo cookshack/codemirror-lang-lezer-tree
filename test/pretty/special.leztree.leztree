@@ -1,0 +1,11 @@
+Tree(Top(Name,
+         Ch(Special,
+            Node(Name,
+                 Ch(Node(Name,
+                         Ch(Special,
+                            Node(Name),
+                            Node(Name),
+                            Node(Name,
+                                 Ch(Node(Name))))),
+                    Node(Name))),
+            Node(Name))))

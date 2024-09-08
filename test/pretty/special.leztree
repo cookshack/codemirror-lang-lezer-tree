@@ -1,0 +1,7 @@
+Program(pub,
+        Decl(FnProto(fn,
+                     Identifier,
+                     ParamDeclList,
+                     TypeExpr(Identifier)),
+             Block),
+        LineComment)

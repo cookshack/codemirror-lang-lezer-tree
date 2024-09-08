@@ -1,0 +1,6 @@
+Tree(LineComment,
+     Top(Name,
+         Ch(Node(Name),
+            LineComment,
+            Node(Name))),
+     LineComment)
