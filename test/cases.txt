@@ -55,7 +55,7 @@ Tree(Top(Name,
 
 # Comment
 
-//
+#
 X
 
 ==>

@@ -1,4 +1,4 @@
-// test
-A(B, // comment
+# test
+A(B, # comment
   C)
-//end
+#end
