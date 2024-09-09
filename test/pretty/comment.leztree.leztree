@@ -1,6 +1,9 @@
 Tree(LineComment,
      Top(Name,
-         Ch(Node(Name),
+         Ch(\(,
+            Node(Name),
+            \,,
             LineComment,
-            Node(Name))),
+            Node(Name),
+            \))),
      LineComment)

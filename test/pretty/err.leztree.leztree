@@ -1,3 +1,6 @@
 Tree(Top(Name,
-         Ch(Node(Name),
-            Error)))
+         Ch(\(,
+            Node(Name),
+            \,,
+            Error,
+            \))))

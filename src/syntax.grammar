@@ -45,6 +45,11 @@ error { @specialize<specialName, "⚠"> }
   specialName { nameCharLower nameChar* }
   name { nameChar+ }
   LineComment[isolate] { "#" ![\n\r]* }
+
+  // literal tokens
+  "(" ")"
+  ","
+
   @precedence { whitespace, specialName, name }
 }
 

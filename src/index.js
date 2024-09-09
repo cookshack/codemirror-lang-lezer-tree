@@ -4,7 +4,7 @@ import { LRLanguage, LanguageSupport, /*indentNodeProp,*/ foldNodeProp, foldInsi
 let props, data, parser
 
 props = [ //indentNodeProp.add({ Rule: context => context.column(context.node.from) + context.unit }),
-          foldNodeProp.add({ Node: foldInside }),
+          foldNodeProp.add({ "Ch": foldInside }),
         ]
 
 data = {}
