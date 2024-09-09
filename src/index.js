@@ -1,11 +1,10 @@
 import * as Grammar from './syntax.grammar'
-import { LRLanguage, LanguageSupport, /*indentNodeProp,*/ foldNodeProp, foldInside } from '@codemirror/language'
+import { LRLanguage, LanguageSupport, indentNodeProp, delimitedIndent, foldNodeProp, foldInside } from '@codemirror/language'
 
 let props, data, parser
 
-props = [ //indentNodeProp.add({ Rule: context => context.column(context.node.from) + context.unit }),
-          foldNodeProp.add({ "Ch": foldInside }),
-        ]
+props = [ indentNodeProp.add({ Ch: delimitedIndent({ closing: '}' }) }),
+          foldNodeProp.add({ Ch: foldInside }) ]
 
 data = {}
 
