@@ -3,10 +3,11 @@ import { LRLanguage, LanguageSupport, indentNodeProp, delimitedIndent, foldNodeP
 
 let props, data, parser
 
-props = [ indentNodeProp.add({ Ch: delimitedIndent({ closing: '}' }) }),
+props = [ indentNodeProp.add({ Ch: delimitedIndent({ closing: ')' }) }),
           foldNodeProp.add({ Ch: foldInside }) ]
 
-data = { commentTokens: { line: "#" } }
+data = { commentTokens: { line: "#" },
+         closeBrackets: { brackets: "(" } }
 
 parser = Grammar.parser.configure({ props: props })
 
