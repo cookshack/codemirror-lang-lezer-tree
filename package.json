@@ -29,7 +29,7 @@
     "@lezer/generator": "^1.0.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "lezer-utils": "^0.1.0",
-    "mocha": "^9.0.1",
+    "mocha": "^10.8.2",
     "rollup": "^4.28.0"
   },
   "license": "MIT"
