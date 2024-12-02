@@ -6,8 +6,8 @@ let props, data, parser
 props = [ indentNodeProp.add({ Ch: delimitedIndent({ closing: ')' }) }),
           foldNodeProp.add({ Ch: foldInside }) ]
 
-data = { commentTokens: { line: "#" },
-         closeBrackets: { brackets: "(" } }
+data = { commentTokens: { line: '#' },
+         closeBrackets: { brackets: '(' } }
 
 parser = Grammar.parser.configure({ props: props })
 
