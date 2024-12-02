@@ -1,6 +1,7 @@
-import { lr, pretty } from "../dist/index.js"
+import { lr } from "../dist/index.js"
 import { fileTests } from "@lezer/generator/dist/test"
 import * as LZGen from "@lezer/generator"
+import { pretty } from "lezer-utils"
 
 import * as fs from "fs"
 import * as path from "path"
