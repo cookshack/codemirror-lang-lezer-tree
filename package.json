@@ -26,6 +26,7 @@
     "@lezer/lr": "^1.0.0"
   },
   "devDependencies": {
+    "@cookshack/build": "^0.2.0",
     "@lezer/generator": "^1.0.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "lezer-utils": "^0.1.0",
