@@ -5,7 +5,7 @@
   "homepage": "https://git.sr.ht/~mattmundell/codemirror-lang-lezer-tree",
   "scripts": {
     "check": "./node_modules/@cookshack/build/bin/check *.js src/*.js",
-    "prepare": "husky",
+    "prepare": "./node_modules/@cookshack/build/bin/prepare",
     "test": "mocha test/test.js"
   },
   "repository": {
